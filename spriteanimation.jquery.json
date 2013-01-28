@@ -1,15 +1,14 @@
 {
-	"name": "imgpreloader",
-	"title": "jquery imgpreloader", 
-	"description": "this is a simple image preloader plugin.",
-	"version": "1.1.1",
+	"name": "spriteanimation",
+	"title": "jquery ui spriteanimation", 
+	"description": "jquery.ui.spriteanimation.js is a simple background image sprite animation plugin.",
+	"version": "1.0.0",
 	"keywords": [
-		"loader",
-		"loading",
-		"preload",
-		"preloader",
-		"imgpreload",
-		"imgpreloader"
+		"frame",
+		"sprite",
+		"animation",
+		"spritesheet",
+		"spriteanimation"
 	],
 	"author": {
 		"name": "FiNGAHOLiC",
@@ -22,9 +21,10 @@
 		}
 	],
 	"dependencies": {
-		"jquery": ">=1.7"
+		"jquery": ">=1.7",
+		"jquery.ui.widget": ">=1.8"
 	},
-	"docs": "http://fingaholic.github.com/jquery.imgpreloader/",
-	"download": "https://github.com/FiNGAHOLiC/jquery.imgpreloader/archive/master.zip",
-	"homepage": "https://github.com/FiNGAHOLiC/jquery.imgpreloader"
+	"docs": "http://fingaholic.github.com/jquery.ui.spriteanimation/",
+	"download": "https://github.com/FiNGAHOLiC/jquery.ui.spriteanimation/archive/master.zip",
+	"homepage": "https://github.com/FiNGAHOLiC/jquery.ui.spriteanimation"
 }
