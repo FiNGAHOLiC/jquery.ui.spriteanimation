@@ -73,7 +73,7 @@ $sprite.trigger('fastforward.spriteanimation');
 
 ## Requirements
 
-jQuery 1.7.x or later.
+jQuery 1.7.x or later.  
 jQuery UI Widget 1.8.x or later.
 
 ## Browsers
