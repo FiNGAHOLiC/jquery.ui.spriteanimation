@@ -9,9 +9,9 @@
 		<title>jquery.ui.spriteanimation.js</title>
 		<style>
 			pre { border: 1px solid #000; padding: 10px; }
-			#sprite1 { width: 217px; height: 136px; border: 1px solid black; background-image: url(./img/sprite.png);  }
-			#sprite2 { width: 217px; height: 136px; border: 1px solid black; background-image: url(./img/sprite2.png);  }
-			#sprite3 { width: 200px; height: 200px; border: 1px solid black; background-image: url(./img/sprite3.png);  }
+			#sprite1 { width: 100px; height: 102px; border: 1px solid black; background-image: url(./img/sprite.png);  }
+			#sprite2 { width: 100px; height: 102px; border: 1px solid black; background-image: url(./img/sprite2.png);  }
+			#sprite3 { width: 99px; height: 124px; border: 1px solid black; background-image: url(./img/sprite3.png);  }
 		</style>
 	</head>
 	<body>
@@ -29,8 +29,8 @@
 				<button id="fastforward">Fast Forward</button>
 <pre>var $sprite = $('#sprite1').spriteanimation({
 	fps: 30,
-	frameWidth: 217,
-	frameHeight: 136,
+	frameWidth: 100,
+	frameHeight: 102,
 	frameTotal: 16
 });
 
@@ -62,8 +62,8 @@ var $fastforward = $('#fastforward').on('click', function(){
 				<button id="stop2">Stop</button>
 <pre>var $sprite = $('#sprite2').spriteanimation({
 	fps: 30,
-	frameWidth: 217,
-	frameHeight: 136,
+	frameWidth: 100,
+	frameHeight: 102,
 	frameTotal: 16,
 	repeat: true
 });
@@ -75,18 +75,18 @@ var $stop = $('#stop2').on('click', function(){
 });</pre>
 			</section>
 			<section>
-				<h1>Line Change</h1>
+				<h1>Use multiple background image</h1>
 				<p>Use <a href="./img/sprite3.png">this sprite image</a></p>
 				<div id="sprite3"></div>
 				<button id="start3">Start</button>
 				<button id="reverse3">Reverse</button>
 <pre>var $sprite = $('#sprite3').spriteanimation({
-	fps: 30,
-	frameWidth: 200,
-	frameHeight: 200,
-	frameTotal: 60,
+	fps: 15,
+	frameWidth: 99,
+	frameHeight: 124,
+	frameTotal: 27,
 	bgLineChange: true,
-	bgLineChangeNum: 20
+	bgLineChangeNum: 11
 });
 var $start = $('#start3').on('click', function(){
 	$sprite.trigger('play.spriteanimation');
@@ -107,8 +107,8 @@ var $reverse = $('#reverse3').on('click', function(){
 				(function(){
 					var $sprite = $('#sprite1').spriteanimation({
 						fps: 30,
-						frameWidth: 217,
-						frameHeight: 136,
+						frameWidth: 100,
+						frameHeight: 102,
 						frameTotal: 16
 					});
 					var $start = $('#start').on('click', function(){
@@ -132,8 +132,8 @@ var $reverse = $('#reverse3').on('click', function(){
 				(function(){
 					var $sprite = $('#sprite2').spriteanimation({
 						fps: 30,
-						frameWidth: 217,
-						frameHeight: 136,
+						frameWidth: 100,
+						frameHeight: 102,
 						frameTotal: 16,
 						repeat: true
 					});
@@ -148,12 +148,12 @@ var $reverse = $('#reverse3').on('click', function(){
 				// Line Change
 				(function(){
 					var $sprite = $('#sprite3').spriteanimation({
-						fps: 30,
-						frameWidth: 200,
-						frameHeight: 200,
-						frameTotal: 60,
+						fps: 15,
+						frameWidth: 99,
+						frameHeight: 124,
+						frameTotal: 27,
 						bgLineChange: true,
-						bgLineChangeNum: 20
+						bgLineChangeNum: 11
 					});
 					var $start = $('#start3').on('click', function(){
 						$sprite.trigger('play.spriteanimation');
