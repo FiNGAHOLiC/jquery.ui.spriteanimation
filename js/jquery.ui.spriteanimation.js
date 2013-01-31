@@ -4,7 +4,7 @@
  * @modified  2012/01/31
  * @requires  jQuery 1.7.x or later &&
  *            jQuery UI Widget 1.8.x or later
- * @version   1.0.3
+ * @version   1.0.4
  * @author    FiNGAHOLiC
  * @link      https://github.com/FiNGAHOLiC/jquery.ui.spriteanimation
  * @license   The MIT License
