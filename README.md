@@ -16,7 +16,6 @@ http://fingaholic.github.com/jquery.ui.spriteanimation/
 * **frameTotal** `Integer` Total frames (default value is 0)
 * **bgLineChange** `Boolean` Use multiple background image or not (default value is false)
 * **bgLineChangeNum** `Integer` Maximum number of frames per line (default value is 0)
-* **frameLinePosY** `Integer` Initial background y position (default value is 0)
 * **repeat** `Boolean` Repeat or not (default value is false)
 
 ### Base setting

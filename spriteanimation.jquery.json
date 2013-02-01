@@ -2,7 +2,7 @@
 	"name": "spriteanimation",
 	"title": "jquery ui spriteanimation", 
 	"description": "jquery.ui.spriteanimation.js is a simple background image sprite animation plugin.",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"keywords": [
 		"frame",
 		"sprite",

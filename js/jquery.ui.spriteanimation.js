@@ -1,10 +1,10 @@
 /*!
  * jquery.ui.spriteanimation.js
  *
- * @modified  2012/01/31
+ * @modified  2012/02/01
  * @requires  jQuery 1.7.x or later &&
  *            jQuery UI Widget 1.8.x or later
- * @version   1.0.5
+ * @version   1.0.6
  * @author    FiNGAHOLiC
  * @link      https://github.com/FiNGAHOLiC/jquery.ui.spriteanimation
  * @license   The MIT License
@@ -21,7 +21,6 @@
 			frameTotal: 0,
 			bgLineChange: false,
 			bgLineChangeNum: 0,
-			frameLinePosY: 0,
 			repeat: false
 		},
 		widgetEventPrefix : 'spriteanimation.',
@@ -37,7 +36,7 @@
 			this._frameTotal = o.frameTotal - 1;
 			this._bgLineChange = o.bgLineChange;
 			this._bgLineChangeNum = o.bgLineChangeNum;
-			this._frameLinePosY = o.frameLinePosY;
+			this._frameLineNum = 0;
 			this._frameCurrent = 0;
 			this._repeat = o.repeat;
 			this._timer = null;
@@ -59,7 +58,10 @@
 		},
 		_setFrame: function(num){
 			this._frameCurrent = num;
-			this._setPosition(this._frameWidth * num * -1, this._frameLinePosY);
+			this._setPosition(
+				this._frameWidth * num * -1,
+				this._frameLineNum * this._frameHeight * -1
+			);
 		},
 		_nextFrame: function(){
 			var num = this._frameCurrent + 1;
@@ -67,14 +69,14 @@
 				if(this._repeat){
 					num = 0;
 					if(this._bgLineChange){
-						this._frameLinePosY = this.options.frameLinePosY;
+						this._frameLineNum = 0;
 					};
 				}else{
 					this._trigger('frameend');
 					return false;
 				};
 			}else if(this._bgLineChange && (num % this._bgLineChangeNum) === 0){
-				this._frameLinePosY -= this._frameHeight;
+				this._frameLineNum += 1;
 			};
 			this._setFrame(num);
 			return true;
@@ -85,14 +87,14 @@
 				if(this._repeat){
 					num = this._frameTotal;
 					if(this._bgLineChange){
-						this._frameLinePosY = ((this._frameTotal + 1) / this._bgLineChangeNum - 1) * this._frameHeight * -1;
+						this._frameLineNum = Math.ceil(((this._frameTotal + 1) / this._bgLineChangeNum) - 1);
 					};
 				}else{
 					this._trigger('framefirst');
 					return false;
 				};
 			}else if(this._bgLineChange && ((num + 1) % this._bgLineChangeNum) === 0){
-				this._frameLinePosY += this._frameHeight;
+				this._frameLineNum -= 1;
 			};
 			this._setFrame(num);
 			return true;
@@ -117,7 +119,7 @@
 		_rewind: function(){
 			clearTimeout(this._timer);
 			if(this._bgLineChange){
-				this._frameLinePosY = this.options.frameLinePosY;
+				this._frameLineNum = 0;
 			};
 			this._setFrame(0);
 		},
@@ -126,7 +128,7 @@
 			var num = this._frameTotal;
 			if(this._bgLineChange){
 				num = this._bgLineChangeNum - 1;
-				this._frameLinePosY = ((this._frameTotal + 1) / this._bgLineChangeNum - 1) * this._frameHeight * -1;
+				this._frameLineNum = Math.ceil(((this._frameTotal + 1) / this._bgLineChangeNum) - 1);
 			};
 			this._setFrame(num);
 		}
