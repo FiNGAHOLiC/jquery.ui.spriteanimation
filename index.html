@@ -84,9 +84,10 @@ var $stop = $('#stop2').on('click', function(){
 	fps: 15,
 	frameWidth: 99,
 	frameHeight: 124,
-	frameTotal: 27,
+	frameTotal: 33,
 	bgLineChange: true,
-	bgLineChangeNum: 11
+	bgLineChangeNum: 11,
+	repeat: true
 });
 var $start = $('#start3').on('click', function(){
 	$sprite.trigger('play.spriteanimation');
@@ -151,9 +152,10 @@ var $reverse = $('#reverse3').on('click', function(){
 						fps: 15,
 						frameWidth: 99,
 						frameHeight: 124,
-						frameTotal: 27,
+						frameTotal: 33,
 						bgLineChange: true,
-						bgLineChangeNum: 11
+						bgLineChangeNum: 11,
+						repeat: true
 					});
 					var $start = $('#start3').on('click', function(){
 						$sprite.trigger('play.spriteanimation');
